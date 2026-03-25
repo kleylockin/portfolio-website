@@ -1,44 +1,109 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #111;
-    color: white;
+body{
+    margin:0;
+    font-family:'Orbitron', sans-serif;
+    background:#020617;
+    color:#e2e8f0;
+    overflow-x:hidden;
 }
 
-header {
-    text-align: center;
-    padding: 60px;
-    background: linear-gradient(135deg, orange, #ff6a00);
+/* ⭐ Stars */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation:starsMove 80s linear infinite;
+    z-index:-2;
 }
 
-nav {
-    text-align: center;
-    background: #222;
-    padding: 15px;
+@keyframes starsMove{
+    from{background-position:0 0;}
+    to{background-position:2000px 2000px;}
 }
 
-nav a {
-    color: white;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
+/* 🌙 Moon */
+.moon{
+    position:fixed;
+    right:80px;
+    top:100px;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:radial-gradient(circle,#fff,#94a3b8);
+    box-shadow:0 0 60px #38bdf8;
+    animation:float 6s ease-in-out infinite;
+    z-index:-1;
 }
 
-section {
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
+@keyframes float{
+    50%{transform:translateY(-25px);}
 }
 
-.card {
-    background: #1e1e1e;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+/* Header */
+header{
+    text-align:center;
+    padding:80px 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #000;
+.glow{
+    font-size:60px;
+    color:#38bdf8;
+    text-shadow:
+        0 0 10px #38bdf8,
+        0 0 20px #38bdf8,
+        0 0 40px #0ea5e9;
+}
+
+/* Typing text */
+.typing{
+    color:#22c55e;
+    margin-top:10px;
+}
+
+/* Navigation */
+nav{
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    margin:20px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+    text-shadow:0 0 10px #38bdf8;
+}
+
+/* Sections */
+section{
+    max-width:900px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+/* Glass Cards */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(56,189,248,0.2);
+    padding:25px;
+    margin:20px 0;
+    border-radius:14px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #38bdf8;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,0.1);
 }
