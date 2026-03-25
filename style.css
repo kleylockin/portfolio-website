@@ -1,135 +1,132 @@
-/* General */
-body{
-    margin:0;
-    font-family:'Orbitron', sans-serif;
-    background:#020617;
-    color:#e2e8f0;
-    overflow-x:hidden;
+/* ===== General Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #020617;
+  color: #e2e8f0;
+  overflow-x: hidden;
 }
 
-/* Stars background */
-.stars{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:url("https://www.transparenttextures.com/patterns/stardust.png");
-    animation:starsMove 80s linear infinite;
-    z-index:-2;
+/* ===== Stars ===== */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  animation: starsMove 80s linear infinite;
+  z-index: -2;
 }
 
-@keyframes starsMove{
-    from{background-position:0 0;}
-    to{background-position:2000px 2000px;}
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
 }
 
-/* Floating Moon */
-.moon{
-    position:fixed;
-    right:80px;
-    top:100px;
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    background:radial-gradient(circle,#fff,#94a3b8);
-    box-shadow:0 0 60px #38bdf8;
-    animation:float 6s ease-in-out infinite;
-    z-index:-1;
+/* ===== Moon ===== */
+.moon {
+  position: fixed;
+  right: 80px;
+  top: 100px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle,#fff,#94a3b8);
+  box-shadow: 0 0 60px #38bdf8;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
 }
-@keyframes float{
-    50%{transform:translateY(-25px);}
-}
-
-/* Header */
-header{
-    text-align:center;
-    padding:80px 20px;
+@keyframes float {
+  50% { transform: translateY(-25px); }
 }
 
-.profile-container{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
+/* ===== Header ===== */
+header {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.profile-pic{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    border:2px solid #38bdf8;
-    box-shadow:0 0 20px #38bdf8;
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Neon Glow */
-.glow{
-    font-size:60px;
-    color:#38bdf8;
-    text-shadow:
-        0 0 10px #38bdf8,
-        0 0 20px #38bdf8,
-        0 0 40px #0ea5e9;
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 20px #38bdf8;
 }
 
-/* Typing Text */
-.typing{
-    color:#22c55e;
-    margin-top:10px;
+.glow {
+  font-size: 60px;
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 40px #0ea5e9;
 }
 
-/* Navigation */
-nav{
-    text-align:center;
-    padding:15px;
+.typing {
+  color: #22c55e;
+  margin-top: 10px;
 }
 
-nav a{
-    margin:20px;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
+/* ===== Navigation ===== */
+nav {
+  text-align: center;
+  padding: 15px;
 }
 
-nav a:hover{
-    color:#38bdf8;
-    text-shadow:0 0 10px #38bdf8;
+nav a {
+  margin: 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
 }
 
-/* Glass Cards */
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(56,189,248,0.2);
-    padding:25px;
-    margin:20px 0;
-    border-radius:14px;
-    transition:0.4s;
+nav a:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px #38bdf8;
+/* ===== Cards ===== */
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56,189,248,0.2);
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 14px;
+  transition: 0.4s;
 }
 
-/* Footer */
-footer{
-    text-align:center;
-    padding:20px;
-    border-top:1px solid rgba(255,255,255,0.1);
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #38bdf8;
 }
 
-/* Dancing Banana */
-.banana-container{
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    z-index:10;
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
-.banana{
-    width:80px;
-    animation:bananaDance 1s infinite alternate;
+
+/* ===== Dancing Banana ===== */
+.banana-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
 }
-@keyframes bananaDance{
-    0%{transform:rotate(-15deg);}
-    50%{transform:rotate(15deg);}
-    100%{transform:rotate(-15deg);}
+
+.banana {
+  width: 80px;
+  animation: bananaDance 1s infinite alternate;
+}
+
+@keyframes bananaDance {
+  0% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(-15deg); }
 }
