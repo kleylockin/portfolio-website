@@ -1,28 +1,28 @@
 const text = [
-  "BSIT Student",
-  "Future Software Developer",
-  "Data & System Builder",
-  "Learning Every Day 🚀"
+"BSIT Student",
+"Future Software Developer",
+"Peanut Butter Jelly Time Dev 🍌",
+"Building Cool Stuff 🚀"
 ];
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+let count=0;
+let index=0;
+let currentText="";
+let letter="";
 
-(function type() {
-  if (count === text.length) count = 0;
+(function type(){
+if(count===text.length) count=0;
 
-  currentText = text[count];
-  letter = currentText.slice(0, ++index);
+currentText=text[count];
+letter=currentText.slice(0,++index);
 
-  document.querySelector(".typing").textContent = letter;
+document.querySelector(".typing").textContent=letter;
 
-  if (letter.length === currentText.length) {
-    count++;
-    index = 0;
-    setTimeout(type, 1500);
-  } else {
-    setTimeout(type, 80);
-  }
+if(letter.length===currentText.length){
+count++;
+index=0;
+setTimeout(type,1500);
+}else{
+setTimeout(type,70);
+}
 })();
