@@ -4,50 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Askley Cachuela Portfolio</title>
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Style -->
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js/build/three.min.js"></script>
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
 </head>
 <body>
-  <div id="background"></div>
+  <!-- Background container -->
+  <div id="background" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></div>
 
+  <!-- Header -->
   <header class="header">
     <h1 class="glitch" data-text="Askley Cachuela">Askley Cachuela</h1>
-    <p>BSIT Student | Future Tech Innovator</p>
+    <p>BSIT Student | Future Developer | Tech Enthusiast</p>
     <div class="social-buttons">
-      <a href="https://github.com/YourGitHub" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/YourLinkedIn" target="_blank">LinkedIn</a>
-      <a href="resume.pdf" download>Download Resume</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
     </div>
   </header>
 
+  <!-- Projects Section -->
   <section class="projects" id="projects">
     <h2>My Projects</h2>
     <div class="project-grid">
+      <!-- Project Card 1 -->
       <div class="project-card">
-        <h3>Project 1</h3>
-        <p>Brief description of your first project.</p>
+        <div class="front">
+          <h3>Project 1</h3>
+          <p>Python Data Analysis</p>
+        </div>
+        <div class="back">
+          <p>Analyzed e-commerce customer behavior using Python and Pandas. Click for GitHub.</p>
+        </div>
       </div>
+
+      <!-- Project Card 2 -->
       <div class="project-card">
-        <h3>Project 2</h3>
-        <p>Brief description of your second project.</p>
+        <div class="front">
+          <h3>Project 2</h3>
+          <p>Unity Game</p>
+        </div>
+        <div class="back">
+          <p>4x4 Sudoku Game with timer, auto-check, and completion notifications. Click for GitHub.</p>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Project 3</h3>
-        <p>Brief description of your third project.</p>
-      </div>
+
+      <!-- Add more projects as needed -->
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:cachuelaaskley4@gmail.com">cachuelaaskley4@gmail.com</a></p>
+    <p>Phone: <a href="tel:09458868155">09458868155</a></p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2026 Askley Cachuela
+    <p>&copy; 2026 Askley Cachuela. All Rights Reserved.</p>
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
