@@ -1,87 +1,43 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+// Three.js particle background
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+let renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('background').appendChild(renderer.domElement);
+
+let particles = new THREE.BufferGeometry();
+let particleCount = 1500;
+let positions = [];
+
+for (let i = 0; i < particleCount; i++) {
+    positions.push((Math.random() - 0.5) * 150);
+    positions.push((Math.random() - 0.5) * 150);
+    positions.push((Math.random() - 0.5) * 150);
 }
 
-body, html {
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  position: relative;
+particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+
+let particleMaterial = new THREE.PointsMaterial({
+    color: 0x00ffcc,
+    size: 0.3
+});
+
+let particleSystem = new THREE.Points(particles, particleMaterial);
+scene.add(particleSystem);
+
+camera.position.z = 70;
+
+function animate() {
+    requestAnimationFrame(animate);
+    particleSystem.rotation.y += 0.002;
+    particleSystem.rotation.x += 0.001;
+    renderer.render(scene, camera);
 }
 
-/* Moving tech background container */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+animate();
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 100px 20px 50px 20px;
-}
-
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.header p {
-  font-size: 1.2rem;
-  color: #00ffcc;
-}
-
-/* Projects */
-.projects {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.project-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.project-card {
-  background: rgba(0, 255, 204, 0.1);
-  border: 1px solid #00ffcc;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  background: rgba(0, 255, 204, 0.2);
-}
-
-/* Contact */
-.contact {
-  text-align: center;
-  padding: 50px 20px;
-  background: rgba(0,0,0,0.5);
-}
-
-.contact a {
-  color: #00ffcc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0,0,0,0.6);
-  font-size: 0.9rem;
-}
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
